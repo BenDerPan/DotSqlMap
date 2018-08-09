@@ -29,6 +29,9 @@ namespace SqlmapApi
 
     public class SqlmapRawApi
     {
+        /// <summary>
+        /// Sqlmap server address
+        /// </summary>
         public string Host { get; private set; }
         public uint Port { get; private set; }
 
