@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSqlMap.Api", "..\DotSqlMap.Api\DotSqlMap.Api.csproj", "{1041F335-7EF0-4681-B247-2596BF6AF480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSqlMap.Api", "DotSqlMap.Api\DotSqlMap.Api.csproj", "{1041F335-7EF0-4681-B247-2596BF6AF480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSqlMap.Desktop", "..\DotSqlMap.Desktop\DotSqlMap.Desktop.csproj", "{3C361AF0-3534-48C2-8B91-8F59CD5E958D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSqlMap.Desktop", "DotSqlMap.Desktop\DotSqlMap.Desktop.csproj", "{3C361AF0-3534-48C2-8B91-8F59CD5E958D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
