@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSqlMap.Api", "..\DotSqlMap.Api\DotSqlMap.Api.csproj", "{1041F335-7EF0-4681-B247-2596BF6AF480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSqlMap.Desktop", "..\DotSqlMap.Desktop\DotSqlMap.Desktop.csproj", "{3C361AF0-3534-48C2-8B91-8F59CD5E958D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1041F335-7EF0-4681-B247-2596BF6AF480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1041F335-7EF0-4681-B247-2596BF6AF480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1041F335-7EF0-4681-B247-2596BF6AF480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1041F335-7EF0-4681-B247-2596BF6AF480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BA7ED2A-055D-450E-9CA0-3900DDDC3B38}
+	EndGlobalSection
+EndGlobal
