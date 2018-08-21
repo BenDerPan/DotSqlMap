@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSqlMap.Api", "DotSqlMap.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSqlMap.Desktop", "DotSqlMap.Desktop\DotSqlMap.Desktop.csproj", "{3C361AF0-3534-48C2-8B91-8F59CD5E958D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlMapDumper", "SqlMapDumper\SqlMapDumper.csproj", "{8E4E9292-2244-49FD-B084-7A48E2BB89B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C361AF0-3534-48C2-8B91-8F59CD5E958D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4E9292-2244-49FD-B084-7A48E2BB89B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4E9292-2244-49FD-B084-7A48E2BB89B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4E9292-2244-49FD-B084-7A48E2BB89B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4E9292-2244-49FD-B084-7A48E2BB89B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

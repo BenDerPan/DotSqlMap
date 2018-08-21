@@ -15,23 +15,23 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBlock VerticalAlignment="Center" Margin="5,2,0,2">Sqlmap Host：</TextBlock>
-            <TextBox Name="tbHost" VerticalAlignment="Center" MinWidth="100" Margin="0,2">localhost</TextBox>
+            <TextBox Name="tbHost" VerticalAlignment="Center" MinWidth="100" Margin="0,2">192.168.102.160</TextBox>
             <TextBlock VerticalAlignment="Center" Margin="5,2">Sqlmap Port：</TextBlock>
             <TextBox Name="tbPort" VerticalAlignment="Center" MinWidth="40" Margin="0,2">8775</TextBox>
             <Button Name="btnNewTask" Margin="15,0,5,2" Height="19" VerticalAlignment="Bottom" Click="btnNewTask_Click">新建任务</Button>
             <TextBlock VerticalAlignment="Center" Margin="5,2">任务ID：</TextBlock>
             <TextBlock Name="tbTaskID" VerticalAlignment="Center" MinWidth="200" Margin="0,2"></TextBlock>
             <TextBlock VerticalAlignment="Center" Margin="5,2">扫描目标：</TextBlock>
-            <TextBox Name="tbTaskUrl" VerticalAlignment="Center" MinWidth="200" Margin="0,2">http://localhost:8080</TextBox>
+            <TextBox Name="tbTaskUrl" VerticalAlignment="Center" MinWidth="200" Margin="0,2">http://testphp.vulnweb.com/listproducts.php?cat=2</TextBox>
             <Button Name="btnScan" Margin="5,2" Click="btnScan_Click">开始扫描</Button>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBox Name="tbStatus" Grid.Row="0" Height="100" Background="Black"></TextBox>
-            <TextBox Name="tbResult" Grid.Row="1" Background="Black"></TextBox>
+            <TextBox Name="tbStatus" Grid.Row="0" Background="Black" Foreground="Yellow" Grid.ColumnSpan="2"></TextBox>
+            <TextBox Name="tbResult" Grid.Row="1" Background="Black" Foreground="White" Grid.ColumnSpan="2"></TextBox>
         </Grid>
     </Grid>
 </Window>

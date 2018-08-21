@@ -2,9 +2,9 @@
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
-namespace SqlmapApi
+namespace DotSqlMap.Api
 {
-    public class RequestResponse
+    public class RawResponse
     {
         public string Content { get; private set; }
 
@@ -14,11 +14,18 @@ namespace SqlmapApi
 
         public JToken ContentJToken => JToken.Parse(Content);
 
-        public RequestResponse(string content, string msg = "")
+        public RawResponse(string content, string msg = "")
         {
             Content = content;
             Message = msg;
-            IsSuccess = (bool)ContentJToken.SelectToken("success");
+            if (Content==null)
+            {
+                IsSuccess = false;
+            }
+            else
+            {
+                IsSuccess = (bool)ContentJToken.SelectToken("success");
+            }
             if (!IsSuccess && string.IsNullOrEmpty(Message))
             {
                 Message = ContentJToken.SelectToken("message").ToString();
@@ -46,43 +53,43 @@ namespace SqlmapApi
             restClient = new RestClient(ApiUrl);
         }
 
-        public RequestResponse Get(string subUrl)
+        public RawResponse Get(string subUrl)
         {
             try
             {
                 RestRequest request = new RestRequest(subUrl, Method.GET);
                 var res = restClient.Execute(request);
-                return new RequestResponse(res.Content);
+                return new RawResponse(res.Content);
             }
             catch (Exception e)
             {
-                return  new RequestResponse(null,e.Message);
+                return  new RawResponse(null,e.Message);
             }
         }
 
-        public RequestResponse Post(string subUrl,object jsonData)
+        public RawResponse Post(string subUrl,object jsonData)
         {
             try
             {
                 RestRequest request = new RestRequest(subUrl, Method.POST);
                 request.AddJsonBody(jsonData);
                 var res = restClient.Execute(request);
-                return new RequestResponse(res.Content);
+                return new RawResponse(res.Content);
             }
             catch (Exception e)
             {
-                return new RequestResponse(null, e.Message);
+                return new RawResponse(null, e.Message);
             }
         }
 
-        public RequestResponse NewTask()
+        public RawResponse NewTask()
         {
             var res = Get("/task/new");
             return res;
 
         }
 
-        public RequestResponse DeleteTask(string taskID)
+        public RawResponse DeleteTask(string taskID)
         {
             var res = Get($"/task/{taskID}/delete");
             return res;
@@ -90,38 +97,38 @@ namespace SqlmapApi
 
         
 
-        public RequestResponse AdminTaskList(string taskID)
+        public RawResponse AdminTaskList(string taskID)
         {
             var res = Get($"/admin/{taskID}/list");
             return res;
         } 
 
-        public RequestResponse AdminTaskFlush(string taskID)
+        public RawResponse AdminTaskFlush(string taskID)
         {
             var res = Get($"/admin/{taskID}/flush");
             return res;
         }
 
-        public RequestResponse GetTaskOptionList(string taskID)
+        public RawResponse GetTaskOptionList(string taskID)
         {
             var res = Get($"/option/{taskID}/list");
             return res;
         }
 
-        public RequestResponse GetTaskOption(string taskID, string optionKey)
+        public RawResponse GetTaskOption(string taskID, string optionKey)
         {
             var op = new { option=optionKey};
             var res = Post($"/option/{taskID}/get", op);
             return res;
         }
 
-        public RequestResponse SetTaskOption(string taskID,object option)
+        public RawResponse SetTaskOption(string taskID,object option)
         {
             var res = Post($"/option/{taskID}/set", option);
             return res;
         }
 
-        public RequestResponse StartScan(string taskID, object option = null)
+        public RawResponse StartScan(string taskID, object option = null)
         {
             if (option == null)
             {
@@ -131,46 +138,46 @@ namespace SqlmapApi
             return res;
         }
 
-        public RequestResponse StopScan(string taskID)
+        public RawResponse StopScan(string taskID)
         {
             var res = Get($"/scan/{taskID}/stop");
             return res;
         }
 
 
-        public RequestResponse KillScan(string taskID)
+        public RawResponse KillScan(string taskID)
         {
             var res = Get($"/scan/{taskID}/kill");
             return res;
         }
 
 
-        public RequestResponse GetScanStatus(string taskID)
+        public RawResponse GetScanStatus(string taskID)
         {
             var res = Get($"/scan/{taskID}/status");
             return res;
         }
 
-        public RequestResponse GetScanData(string taskID)
+        public RawResponse GetScanData(string taskID)
         {
             var res = Get($"/scan/{taskID}/data");
             return res;
         }
 
 
-        public RequestResponse GetLog(string taskID)
+        public RawResponse GetLog(string taskID)
         {
             var res = Get($"/scan/{taskID}/log");
             return res;
         }
 
-        public RequestResponse GetLogRange(string taskID,int start,int end)
+        public RawResponse GetLogRange(string taskID,int start,int end)
         {
             var res = Get($"/scan/{taskID}/log/{start}/{end}");
             return res;
         }
 
-        public RequestResponse DownloadFileToLocal(string taskID,string target,string filename,string path)
+        public RawResponse DownloadFileToLocal(string taskID,string target,string filename,string path)
         {
             var res = Get($"/download/{taskID}/{target}/{filename}:{path}");
             return res;
